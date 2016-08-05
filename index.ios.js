@@ -82,6 +82,9 @@ class AwesomeProject extends Component {
     // var rowHash = Math.abs(hashCode(rowData));
     // var imgSource = THUMB_URLS[rowHash % THUMB_URLS.length];
     var src = rowData.imgUrl;
+    var MOCKED_MOVIES_DATA = [
+      {title: 'Title of movie', year: '2015', posters: {thumbnail: 'http://i.imgur.com/UePbdph.jpg'}},
+    ];
     return (
       <TouchableHighlight onPress={() => {
           // this._pressRow(rowID);
@@ -89,10 +92,12 @@ class AwesomeProject extends Component {
         }}>
         <View>
           <View style={styles.row}>
-            <Image source={{uri: src}}
-                   style={{width: 120, height: 120}}/>
+            <Image style={{height: 53, width: 81}} source={{uri: rowData.imgUrl}} />
             <Text style={styles.text}>
               {rowData.champion.name}
+            </Text>
+            <Text style={stylex.text}>
+              {rowData.stats.totalSess}
             </Text>
           </View>
         </View>
